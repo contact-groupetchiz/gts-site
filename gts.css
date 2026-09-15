@@ -47,7 +47,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 55px;
+    height: 70px;
 }
 
 .logo {
@@ -63,7 +63,7 @@ header {
 
 .logo-img {
     color: var(--secondary-color);
-    width: 50px ;
+    width: 45px ;
     height: auto;
 }
 
@@ -554,5 +554,52 @@ footer {
     .footer-content {
         flex-direction: column;
         gap: 15px;
+    }
+}
+/* --- Styles de base pour le menu --- */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Le bouton burger est caché par défaut sur grand écran (PC) */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* --- Styles pour les écrans mobiles (Tablettes et Smartphones ≤ 768px) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Affiche le bouton burger sur mobile */
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Ajustez selon la hauteur de votre navbar */
+        left: -100%; /* Cache le menu complètement hors de l'écran à gauche */
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+        text-align: center;
+        transition: left 0.3s ease-in-out; /* Effet de glissement fluide */
+        z-index: 1000;
+    }
+
+    /* Classe ajoutée par le JavaScript pour faire glisser et afficher le menu */
+    .nav-links.active {
+        left: 0; 
+    }
+
+    .nav-links li {
+        margin: 15px 0;
     }
 }
