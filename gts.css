@@ -61,11 +61,12 @@ header {
     color: var(--accent-color);
 }
 .logo-img {
-     color: var(--secondary-color);
-    height: 40px;          /* Hauteur fixe idéale pour une barre de navigation */
+    color: var(--secondary-color);
+    height: 38px;          /* Hauteur fixe idéale pour une barre de navigation */
     width: auto;           /* Garde les proportions de l'image d'origine */
     display: block;
     max-width: 100%;       /* Empêche l'image de dépasser de l'écran */
+    object-fit: contain;
 }
 nav ul {
     display: flex;
